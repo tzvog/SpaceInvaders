@@ -1,0 +1,65 @@
+tzvog 
+
+
+================
+File Description
+================
+
+AggressiveShip.java - a class that holds the ship of the aggressive type its main purpose is to find
+another ship and shoot it down
+BasherShip.java - class that contains a ship of the basher type whose job is to bash into
+other ships and try to reduce there life
+PursuitShip.java - class that contains a Pursuit ship abstract class its job is to help create
+enemy ships that are on pursuit for other ships
+DrunkShip.java - class that contains a drunk ship
+HumanShip.java - class that contains a human ship
+RunnerShip.java - class that contains a Runner ship
+SpaceShip.java - class that contains an Abstract space ship that all ships should follow the api
+SpaceShipFactory.java - class that contains a ship factory so that when ships are needed we
+will return a whole list of them
+SpaceWars.java - the main class of the program that runs the whole game
+SpecialShip.java - class that contains a Special ship
+
+=============================
+=          Design           =
+=============================
+from the description of the the project i understood a lot of code will needed to be reused
+the rules for every space ship where clear that we must stick to the api given therefore within the
+spaceship class i defined it all in a way that all spaceships must listen to the api.
+for the pre defined ships given to us by the project i decided that they all sound very similar in a way
+that they are all after another ship therefore i made another abstract class based on the spaceship class
+called pursuit ship due to the fact that they all pursue
+
+=============================
+=  Implementation details   =
+=============================
+SpaceShip:
+all my ships my live up to the api given to us by the therefore i made SpaceShip abstract
+
+    Pursuit:
+    from the description of the project the ship all the ships are pursuing other ships therefore it made
+    sense to make an abstract class that implements that part
+    to extend everything i did not want to give away the whole object therefore i used getters so the
+    children can make decision on the details
+        Aggressive:
+        inherits pursuit but in addition tries to fire at the enemy
+        Basher:
+        inherits pursuit but in addition tries to bash into the enemy
+        Runner:
+        inherits pursuit but implements pursuing in the other direction
+        Drunk:
+        inherits pursuit because hes to drunk to pursuit by himself and cant tell when to shoot or not shoot
+        therefore will shoot on random every few rounds because hes a slow drunk
+
+    Human:
+    is very different from the other ships due to the fact that it is controlled by a human and not \
+    necessarily under pursuit for another ship
+
+    Special ship:
+    is different from the rest due to the fact that its hard to kill the human ship with pursuit but
+    ambushing by staying in the same spot is easier so if a human ship passed by it the ship will just start
+    firing off some rounds
+
+=============================
+=    Answers to questions   =
+=============================
